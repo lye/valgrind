@@ -708,6 +708,32 @@ PRE(sys_sysarch)
    }
 }
 
+PRE(sys_getrandom)
+{
+   PRINT("sys_getrandom ( %#" FMT_REGWORD "x, %" FMT_REGWORD "u, %"
+         FMT_REGWORD "u )" , ARG1, ARG2, ARG3);
+   PRE_REG_READ3(vki_ssize_t, "getrandom",
+                 void *, buf, vki_size_t, buflen, unsigned int, flags);
+   PRE_MEM_WRITE( "getrandom(cpu)", ARG1, ARG2 );
+}
+
+POST(sys_getrandom)
+{
+   POST_MEM_WRITE( ARG1, ARG2 );
+}
+
+PRE(sys_minherit)
+{
+   PRINT("sys_minherit ( %#" FMT_REGWORD "x, %" FMT_REGWORD "u, %"
+         FMT_REGWORD "u )", ARG1, ARG2, ARG3);
+   PRE_REG_READ3(int, "minherit",
+                 void *, addr, vki_size_t, len, int, inherit);
+}
+
+POST(sys_minherit)
+{
+}
+
 #undef PRE
 #undef POST
 

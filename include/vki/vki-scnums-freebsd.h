@@ -413,6 +413,7 @@
 #define	__NR_fstatat64		552
 #define	__NR_getdirentries64	554
 #define	__NR_fstatfs64		556
+#define __NR_getrandom 	563
 
 #define __NR_fake_sigreturn	1000
 

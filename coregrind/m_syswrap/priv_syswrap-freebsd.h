@@ -276,6 +276,7 @@ DECL_TEMPLATE(freebsd, sys_fcntl);
 DECL_TEMPLATE(freebsd, sys_ioctl);
 DECL_TEMPLATE(freebsd, sys_mq_open);
 DECL_TEMPLATE(freebsd, sys_mq_unlink);
+DECL_TEMPLATE(freebsd, sys_getrandom);
 #endif   // __PRIV_SYSWRAP_FREEBSD_H
 
 /*--------------------------------------------------------------------*/

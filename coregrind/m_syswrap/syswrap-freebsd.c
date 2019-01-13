@@ -4167,7 +4167,7 @@ const SyscallTableEntry ML_(syscall_table)[] = {
 
 // BSDXY(__NR_ntp_gettime,		sys_ntp_gettime),		// 248
    // nosys								   249
-// BSDXY(__NR_minherit,			sys_minherit),			// 250
+   BSDXY(__NR_minherit,			sys_minherit),			// 250
    BSDX_(__NR_rfork,			sys_rfork),			// 251
 
    GENXY(__NR_openbsd_poll,		sys_poll),			// 252
@@ -4496,6 +4496,8 @@ const SyscallTableEntry ML_(syscall_table)[] = {
    BSDXY(__NR_fstatat64,		sys_fstatat64),			// 552
    BSDXY(__NR_getdirentries64,		sys_getdirentries64),		// 554
    GENXY(__NR_fstatfs64,		sys_fstatfs),   		// 556
+
+   BSDXY(__NR_getrandom,        sys_getrandom),         // 563
 
    BSDX_(__NR_fake_sigreturn,		sys_fake_sigreturn),		// 1000, fake sigreturn
 
